@@ -45,12 +45,6 @@
   height: auto;
   border-radius: 8px; 
 }
-
-
-
-
-
-
 body, input, select, textarea, button {
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
@@ -75,7 +69,6 @@ body, input, select, textarea, button {
             align-items: center;
             
         }
-
         .form-container {
             
             border: 2px solid rgb(124, 10, 155);
@@ -90,11 +83,7 @@ body, input, select, textarea, button {
             backdrop-filter: blur(40px); 
             -webkit-backdrop-filter: blur(40px);
         }
-  
-       
-
-       
-        .input-grid {
+           .input-grid {
             display: flex;
             flex-direction: column;
             gap: 30px;
@@ -127,21 +116,23 @@ body, input, select, textarea, button {
             transition: border-color 0.3s, box-shadow 0.3s;
             
         }
-
         input:focus, select:focus {
             outline: none;
             border-color: var(--input-focus);
             box-shadow: 0 0 0 5px rgba(155, 89, 182, 0.1);
             width: 95%;
+            
         }
-
         input::placeholder {
             color: var(--text-color-secondary);
             opacity: 0.8;
         }
-
-       
-        
+      select:focus,
+      select:active,
+      select option:checked {
+        color: #fff !important;
+        background-color: var(--input-bg);
+      }
     button[type="submit"] {
   width: 100%;
   padding: 20px;
@@ -159,7 +150,6 @@ body, input, select, textarea, button {
   justify-content: center;
   align-items: center;
 }
-
 button[type="submit"]::before {
   content: "";
   position: absolute;
@@ -170,12 +160,10 @@ button[type="submit"]::before {
   background: rgba(255, 255, 255, 0.25);
   transform: skewX(-20deg);
 }
-
 button[type="submit"]:hover::before {
   left: 100%;
   transition: left 0.6s ease;
 }
-
 button[type="submit"]:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px rgba(123, 47, 247, 0.1),
@@ -251,17 +239,11 @@ select, option {
   color: #e81ac6; 
 }
 
-
-
-
 .banner-left {
   display: flex;
   align-items: center;
   gap: 15px;
 }
-
-
-
 .banner-text h2 {
   font-size: 1.8rem;
   margin: 0;
@@ -273,12 +255,6 @@ select, option {
   color: #444;
   margin: 0;
 }
-
-
-
-
-
-
         .social-links a.instagram:hover { color: var(--social-instagram); }
         .social-links a.linkedin:hover { color: var(--social-linkedin); }
         .social-links a.email:hover { color: var(--social-email); }
@@ -315,13 +291,13 @@ select, option {
 }
 
 .form-container {
-  max-width: 600px; /* prevent stretching on big screens */
-  width: 100%;      /* fill small screens */
+  max-width: 600px; 
+  width: 100%;      
   padding: 2rem;
   box-sizing: border-box;
 }
 
-/* Banner image fully responsive */
+
 .banner img.event-banner {
   width: 1900px;
   height: 100%;
@@ -330,14 +306,13 @@ select, option {
   margin-left: -1rem;
 }
 
-/* Inputs full width */
+
 .input-group input,
 .input-group select {
   width: 100%;
   box-sizing: border-box;
 }
 
-/* Row with two fields side by side */
 .input-group-row {
   display: flex;
   gap: 1rem;
@@ -349,43 +324,58 @@ select, option {
   min-width: 150px;
 }
 
-/* Make button full width on mobile */
 button {
   width: 100%;
 }
-
-/* Contact section responsiveness */
 .contact-persons {
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
 }
-
 .contact-persons > div {
   flex: 1 1 45%;
   min-width: 150px;
 }
-
-/* Video background fix */
-#bg-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-/* Small screens adjustments */
 @media (max-width: 480px) {
   .input-group-row .input-group {
-    flex: 1 1 100%; /* stack fields vertically */
+    flex: 1 1 100%; 
   }
   .contact-persons > div {
-    flex: 1 1 100%; /* stack contact info */
+    flex: 1 1 100%; 
   }
   .form-container {
     padding: 1.5rem;
   }
+}
+.success-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  background: rgba(172, 39, 205, 0.115);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 25px rgba(255, 0, 255, 0.1);
+  text-align: center;
+  color: #fff;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.success-page h2 {
+  font-size: 2rem;
+  color: #4cff9f;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 15px #54ffa436, 0 0 25px #00ffcc5e;
+}
+
+.success-page p {
+  font-size: 1.2rem;
+  color: #e0e0e0ca;
+  margin-top: 0.5rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }
